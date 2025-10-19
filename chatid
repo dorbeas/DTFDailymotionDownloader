@@ -1,0 +1,16 @@
+
+
+from pyrogram import Client, filters
+
+api_id = 23808578  # your API ID
+api_hash = "143ce1fde47f1ff58807200919d5d980"
+bot_token = "8432002920:AAEz9GroO0aybXj317I_tx-doyqiVJJX52w"
+
+app = Client("bot_session", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+
+@app.on_message(filters.channel)
+def show_channel_id(client, message):
+    print(f"✅ Channel title: {message.chat.title}")
+    print(f"✅ Channel ID: {message.chat.id}")
+
+app.run()
